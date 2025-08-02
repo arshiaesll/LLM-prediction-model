@@ -1,0 +1,15 @@
+[server]
+enableStaticServing = true
+
+[[theme.fontFaces]]
+family="amatic"
+url="app/static/AmaticSC-Regular.ttf"
+style="normal"
+
+
+
+[theme]
+font = "amatic"
+textColor="#5EA3DE"
+backgroundColor = "#0E1621"
+secondaryBackgroundColor="#242F3D"
