@@ -56,6 +56,6 @@ with tab2:
 
     df = pd.read_csv("./results.csv", index_col=0)
     st.markdown("<h2 style='text-align: center'>Changes in performance for different word counts</h1>", unsafe_allow_html=True)
-    st.line_chart(df, y_label="Percentage", x_label="Number of words in the train dataset",)
+    st.line_chart(df, y_label="Percentage", x_label="Number of words in the train dataset")
 
 

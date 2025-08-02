@@ -1,4 +1,4 @@
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import os
 import google.generativeai as genai
 from prompts import HISTORY_QUESTION_PROMPT, TEST_PROMPT, get_essay_with_topic, HISTORY_ESSAY_TOPICS, HISTORY_ESSAY_TOPICS_2
@@ -19,9 +19,8 @@ GEMINI_PROB = "./data/mistral_prob.json"
 MISTRAL_PROB = "./data/gemini_prob.json"
 
 MIN_VAL = 1e-5
-# load_dotenv(ENV_PATH)
+load_dotenv(ENV_PATH)
 CURR_GEMINI_API = os.getenv("GEMINI_API_KEY_1")
-# CURR_GEMINI_API = GEMINI_API_KEY_1
 genai.configure(api_key=CURR_GEMINI_API)
 
 gemini_model = genai.GenerativeModel(model_name="gemini-2.0-flash")
@@ -151,7 +150,7 @@ def find_prob(file_name, write_path="", number_of_words=-1):
 
         words = words[:number_of_words]
         total_words = len(words)
-        # print(total_words)
+        print(total_words)
         for word in words:
             try:
                 model_dict[word] += 1 / total_words
@@ -239,7 +238,7 @@ def add_essays(n, gemini_file_name, mistral_file_name, topics_list):
             except Exception as e:
                 print(e)
                 switch_api_key()
-                time.sleep(5 + norm.rvs(1, 1) * 5)
+                time.sleep(5 + abs(norm.rvs(1, 1)) * 5)
                 continue
 
         while True:
@@ -248,7 +247,7 @@ def add_essays(n, gemini_file_name, mistral_file_name, topics_list):
                 break
             except Exception as e:
                 print(e)
-                time.sleep(20 + norm.rvs(1, 1) * 5)
+                time.sleep(20 + abs(norm.rvs(1, 1)) * 5)
         topic = ""
 
 def load_prob(gemini_path=GEMINI_PROB, mistral_path=MISTRAL_PROB):
@@ -320,11 +319,11 @@ if __name__ == "__main__":
     # mistral_topics = get_topics(MISTRAL_TEST_JSON)
     # print(find_total_words(GEMINI_TEST_JSON))
     # print(find_total_words(MISTRAL_TEST_JSON))
-    add_essays(300, GEMINI_JSON, MISTRAL_JSON, HISTORY_ESSAY_TOPICS_2)
+    # add_essays(300, GEMINI_JSON, MISTRAL_JSON, HISTORY_ESSAY_TOPICS_2)
 
-    # fit()
-    # result = find_results(GEMINI_TEST_JSON, MISTRAL_TEST_JSON, predict_gemini_mistral)
-    # print(result)
+    fit()
+    result = find_results(GEMINI_TEST_JSON, MISTRAL_TEST_JSON, predict_gemini_mistral)
+    print(result)
     # lst = np.linspace(500, 250000)
     # df = pd.DataFrame(columns=["Accuracy", "Recall", "Precision", "f1_score"])
     # for num in lst:
