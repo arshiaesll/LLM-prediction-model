@@ -1,4 +1,4 @@
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 import google.generativeai as genai
 from prompts import HISTORY_QUESTION_PROMPT, TEST_PROMPT, get_essay_with_topic, HISTORY_ESSAY_TOPICS, HISTORY_ESSAY_TOPICS_2
@@ -19,8 +19,9 @@ GEMINI_PROB = "./data/mistral_prob.json"
 MISTRAL_PROB = "./data/gemini_prob.json"
 
 MIN_VAL = 1e-5
-load_dotenv(ENV_PATH)
+# load_dotenv(ENV_PATH)
 CURR_GEMINI_API = os.getenv("GEMINI_API_KEY_1")
+# CURR_GEMINI_API = GEMINI_API_KEY_1
 genai.configure(api_key=CURR_GEMINI_API)
 
 gemini_model = genai.GenerativeModel(model_name="gemini-2.0-flash")
