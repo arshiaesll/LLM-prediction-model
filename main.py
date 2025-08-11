@@ -237,7 +237,7 @@ def add_essays(n, gemini_file_name, mistral_file_name, topics_list):
 
             except Exception as e:
                 print(e)
-                switch_api_key()
+                # switch_api_key()
                 time.sleep(5 + abs(norm.rvs(1, 1)) * 5)
                 continue
 
@@ -321,20 +321,20 @@ if __name__ == "__main__":
     # print(find_total_words(MISTRAL_TEST_JSON))
     # add_essays(300, GEMINI_JSON, MISTRAL_JSON, HISTORY_ESSAY_TOPICS_2)
 
-    # fit()
-    # result = find_results(GEMINI_TEST_JSON, MISTRAL_TEST_JSON, predict_gemini_mistral)
-    # print(result)
-    lst = np.linspace(500, 250000)
-    df = pd.DataFrame(columns=["Accuracy", "Recall", "Precision", "f1_score"])
-    for num in lst:
-        print(num)
-        fit(num_of_words=int(num))
-        result = find_results(GEMINI_TEST_JSON, MISTRAL_TEST_JSON, predict_gemini_mistral)
-        print(len(df))
-        df.loc[num] = result
+    fit()
+    result = find_results(GEMINI_TEST_JSON, MISTRAL_TEST_JSON, predict_gemini_mistral)
+    print(result)
+    # lst = np.linspace(500, 250000)
+    # df = pd.DataFrame(columns=["Accuracy", "Recall", "Precision", "f1_score"])
+    # for num in lst:
+    #     print(num)
+    #     fit(num_of_words=int(num))
+    #     result = find_results(GEMINI_TEST_JSON, MISTRAL_TEST_JSON, predict_gemini_mistral)
+    #     print(len(df))
+    #     df.loc[num] = result
 
-    print(df)
-    df.to_csv("./results.csv")
+    # print(df)
+    # df.to_csv("./results.csv")
 
 
 
