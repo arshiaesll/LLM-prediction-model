@@ -7,7 +7,10 @@ word.
 # How to use it?
 
 Clone the repo, install the env using the environment.yml file and run the streamlit file
-at demo.py.
+at demo.py
+
+You can text the live demo at [Live Demo](https://llm-prediction-model-statistical-approach.streamlit.app/)
+Notice that the demo is hosted on streamlit so it takes between 3-5 minutes to wake up
 
 # License
 
