@@ -324,14 +324,14 @@ if __name__ == "__main__":
     fit()
     result = find_results(GEMINI_TEST_JSON, MISTRAL_TEST_JSON, predict_gemini_mistral)
     print(result)
-    # lst = np.linspace(500, 250000)
-    # df = pd.DataFrame(columns=["Accuracy", "Recall", "Precision", "f1_score"])
-    # for num in lst:
-    #     print(num)
-    #     fit(num_of_words=int(num))
-    #     result = find_results(GEMINI_TEST_JSON, MISTRAL_TEST_JSON, predict_gemini_mistral)
-    #     print(len(df))
-    #     df.loc[num] = result
+    lst = np.linspace(500, 500000)
+    df = pd.DataFrame(columns=["Accuracy", "Recall", "Precision", "f1_score"])
+    for num in lst:
+        print(num)
+        fit(num_of_words=int(num))
+        result = find_results(GEMINI_TEST_JSON, MISTRAL_TEST_JSON, predict_gemini_mistral)
+        print(len(df))
+        df.loc[num] = result
 
     # print(df)
     # df.to_csv("./results.csv")
