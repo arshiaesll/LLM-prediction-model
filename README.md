@@ -4,11 +4,14 @@ This work has made a prediction model to figure out if Mistral or Gemini wrote a
 is based on a Bayesian approach comparing the proababilities of Mistral or Gemini using a particular
 word.
 
+# How to use it?
+
+Clone the repo, install the env using the environment.yml file and run the streamlit file
+at demo.py.
+
 # License
 
-# The MIT License (MIT)
-
-Copyright © `<2025>` `<Arshia Eslami>`
+Copyright © 2025 Arshia Eslami
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
