@@ -28,7 +28,7 @@ with tab1:
     """)
 
 
-    st.subheader("Enter student's LLM (Gemini/Mistral) created text")
+    st.subheader("Go to Mistral/Gemini ask it to \"Write an esssay about [your topic]\" and paste the result here!")
     inp = st.text_area("",placeholder="Paste the text here")
     model = Model()
 
